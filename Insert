@@ -1,3 +1,5 @@
 INSERT INTO Produtos(quantidade, validade, nome_Produto, preco, Produtores_idProdutores) VALUES (?, ?, ?, ?, ?);
 
 INSERT INTO Produtores(nomeNegocio, Nome, Usuarios_idUsuarios, Enderecos_idEnderecos) VALUES (?, ?, ?, ?);
+
+INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (?, ?, ?);
