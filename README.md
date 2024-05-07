@@ -1,4 +1,4 @@
-#Kanepe
+# Kanepe
 
-##Equipe
+## Equipe
 Lucca, Vinicius, Benjamin, Max e Elisa
