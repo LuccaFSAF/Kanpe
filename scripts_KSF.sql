@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
 -- Table Enderecos
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Enderecos (
-    idEnderecos INT NOT NULL,
+    idEnderecos INT NOT NULL AUTO_INCREMENT,
     Cidade VARCHAR(100) NOT NULL,
     Rua VARCHAR(100) NOT NULL,
     Bairro VARCHAR(100) NOT NULL,
