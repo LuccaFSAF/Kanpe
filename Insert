@@ -4,9 +4,9 @@ INSERT INTO Produtores(nomeNegocio, Nome, Usuarios_idUsuarios, Enderecos_idEnder
 
 INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (?, ?, ?);
 
-INSERT INTO Carrinho(Vendas_Id, Produtos_id) VALUES(?, ?)
+INSERT INTO Carrinho(Vendas_Id, Produtos_id) VALUES(?, ?);
  
-INSERT INTO Clientes (nome_cliente, Usuarios_id, Enderecos_id, nr_casa) VALUES(?, ?, ?, ?)
+INSERT INTO Clientes (nome_cliente, Usuarios_id, Enderecos_id, nr_casa) VALUES(?, ?, ?, ?);
 
 insert into Usuarios(idUsuarios, nome_Usario, senha_Usuario,email_Usuario) values (?, ?, ?, ?);
 
