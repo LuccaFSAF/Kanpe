@@ -1,1 +1,1 @@
-Update Endereco set Cidade = 'Blumenau', Rua = 'XV de Novembro' where IdEndereco < 3;
+Update Endereco set Cidade = 'Blumenau', Rua = 'XV de Novembro' where IdEndereco < ?;
