@@ -1,0 +1,1 @@
+Delete from Endereco where IdEndereco = 3;

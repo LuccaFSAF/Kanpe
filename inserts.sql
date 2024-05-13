@@ -34,3 +34,7 @@ INSERT INTO Usuarios(idUsuarios, nome_Usario, senha_Usuario,email_Usuario) VALUE
 INSERT INTO Usuarios(idUsuarios, nome_Usario, senha_Usuario,email_Usuario) VALUES (8, 'lezikxc', 'senhauau1795', 'lezio456@gmail.com');
 
 INSERT INTO enderecos(idEnderecos, Cidade, Rua, Bairro) VALUES (?, ?, ?, ?);
+
+INSERT INTO Endereco(idEnderecos, Cidade, Rua, Bairro) VALUES (1, 'Gaspar', 'Rua da Lombada', 'Centro');
+Insert INTO Endereco(idEnderecos, Cidade, Rua, Bairro) VALUES (2, 'Gaspar', 'Rua de Gaspar', 'Centro');
+Insert INTO Endereco(idEnderecos, Cidade, Rua, Bairro) VALUES (3, 'Blumenau', 'Rua das Flores', 'Velha');
