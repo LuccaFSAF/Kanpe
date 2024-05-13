@@ -4,6 +4,10 @@ INSERT INTO Produtores(nomeNegocio, Nome, Usuarios_idUsuarios, Enderecos_idEnder
 
 INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (?, ?, ?);
 
+INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (27, 123, 456);
+INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (13, 789, 132);
+INSERT INTO vendas(quantidade, produtores_idProdutores, clientes_idClientes) VALUES (64, 345, 865);
+
 INSERT INTO Carrinho(Vendas_Id, Produtos_id) VALUES(?, ?);
  
 INSERT INTO Clientes (nome_cliente, Usuarios_id, Enderecos_id, nr_casa) VALUES(?, ?, ?, ?);
