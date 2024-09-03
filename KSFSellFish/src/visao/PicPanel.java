@@ -34,6 +34,7 @@ class PicPanel extends JPanel{
     //this will draw the image
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.drawImage(image,0,0,this);
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
     }
+   
 }
