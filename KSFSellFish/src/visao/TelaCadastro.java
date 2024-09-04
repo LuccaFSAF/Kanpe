@@ -26,14 +26,23 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class TelaCadastro extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtNome;
+	private JTextField txtCPF;
+	private JTextField txtEmail;
+	private JTextField txtSenha;
 
 	/**
 	 * Launch the application.
@@ -67,7 +76,7 @@ public class TelaCadastro extends JFrame {
 		
 		
 		
-		PicPanel panel = new PicPanel("src//IMG/Background.png");
+		PicPanel panel = new PicPanel("src//IMG/BackgroundCompleto.png");
 		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -80,92 +89,174 @@ public class TelaCadastro extends JFrame {
 		PainelCadastro.setOpaque(false);
 		PainelCadastro.setLayout(new MigLayout("", "[grow][533px][grow]", "[50px][136px][300px][80px][100px][20px][50px]"));
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setOpaque(false);
-		PainelCadastro.add(panel_1, "cell 1 1,grow");
-		panel_1.setLayout(null);
+		JPanel painelTitulo = new JPanel();
+		painelTitulo.setOpaque(false);
+		PainelCadastro.add(painelTitulo, "cell 1 1,grow");
+		painelTitulo.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Crie uma conta");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewLabel.setBounds(10, 11, 513, 114);
-		panel_1.add(lblNewLabel);
+		painelTitulo.add(lblNewLabel);
+		
+		JPanel PainelInfo = new JPanel();
+		PainelInfo.setBorder(new EmptyBorder(0, 60, 0, 50));
+		PainelCadastro.add(PainelInfo, "cell 1 2,grow");
+		PainelInfo.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setOpaque(false);
+		PainelInfo.add(panel_1);
+		panel_1.setLayout(new MigLayout("", "[][][]", "[]"));
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome");
+		panel_1.add(lblNewLabel_1, "cell 0 0");
+		
+		JLabel lblNewLabel_7 = new JLabel("*");
+		lblNewLabel_7.setForeground(new Color(255, 0, 0));
+		panel_1.add(lblNewLabel_7, "cell 1 0");
+		
+		txtNome = new JTextField();
+		txtNome.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtNome.setBackground(new Color(255, 255, 255));
+		txtNome.setForeground(new Color(0, 0, 0));
+		PainelInfo.add(txtNome);
+		txtNome.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
-		PainelCadastro.add(panel_2, "cell 1 2,grow");
-		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
-		
-		JLabel lblNewLabel_1 = new JLabel("Nome Completo");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
-		panel_2.add(lblNewLabel_1);
-		
-		textField = new JTextField();
-		panel_2.add(textField);
-		textField.setColumns(10);
+		panel_2.setOpaque(false);
+		PainelInfo.add(panel_2);
+		panel_2.setLayout(new MigLayout("", "[][]", "[]"));
 		
 		JLabel lblNewLabel_2 = new JLabel("CPF");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_2.setVerticalAlignment(SwingConstants.BOTTOM);
-		panel_2.add(lblNewLabel_2);
+		panel_2.add(lblNewLabel_2, "cell 0 0");
 		
-		textField_1 = new JTextField();
-		panel_2.add(textField_1);
-		textField_1.setColumns(10);
+		JLabel lblNewLabel_7_1 = new JLabel("*");
+		lblNewLabel_7_1.setForeground(Color.RED);
+		panel_2.add(lblNewLabel_7_1, "cell 1 0");
 		
-		JLabel lblNewLabel_3 = new JLabel("Email");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_3.setVerticalAlignment(SwingConstants.BOTTOM);
-		panel_2.add(lblNewLabel_3);
-		
-		textField_2 = new JTextField();
-		panel_2.add(textField_2);
-		textField_2.setColumns(10);
-		
-		JLabel lblNewLabel_4 = new JLabel("Senha");
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_4.setVerticalAlignment(SwingConstants.BOTTOM);
-		panel_2.add(lblNewLabel_4);
-		
-		textField_3 = new JTextField();
-		panel_2.add(textField_3);
-		textField_3.setColumns(10);
+		txtCPF = new JTextField();
+		txtCPF.setBorder(new LineBorder(new Color(0, 0, 0)));
+		PainelInfo.add(txtCPF);
+		txtCPF.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
-		PainelCadastro.add(panel_3, "cell 1 3,grow");
-		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
+		panel_3.setOpaque(false);
+		PainelInfo.add(panel_3);
+		panel_3.setLayout(new MigLayout("", "[][]", "[]"));
 		
-		JLabel lblNewLabel_5 = new JLabel("Selecione uma opção de usuario");
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_5.setVerticalAlignment(SwingConstants.BOTTOM);
-		panel_3.add(lblNewLabel_5);
+		JLabel lblNewLabel_3 = new JLabel("Email");
+		panel_3.add(lblNewLabel_3, "cell 0 0");
 		
-		JPanel panel_7 = new JPanel();
-		panel_3.add(panel_7);
-		panel_7.setLayout(null);
+		JLabel lblNewLabel_7_2 = new JLabel("*");
+		lblNewLabel_7_2.setForeground(Color.RED);
+		panel_3.add(lblNewLabel_7_2, "cell 1 0");
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 11, 66, 22);
-		panel_7.add(comboBox);
+		txtEmail = new JTextField();
+		txtEmail.setBorder(new LineBorder(new Color(0, 0, 0)));
+		PainelInfo.add(txtEmail);
+		txtEmail.setColumns(10);
 		
 		JPanel panel_4 = new JPanel();
-		PainelCadastro.add(panel_4, "cell 1 4,grow");
-		panel_4.setLayout(new GridLayout(0, 1, 0, 0));
+		panel_4.setOpaque(false);
+		PainelInfo.add(panel_4);
+		panel_4.setLayout(new MigLayout("", "[][]", "[]"));
 		
-		JPanel panel_6 = new JPanel();
-		panel_4.add(panel_6);
-		panel_6.setLayout(null);
+		JLabel lblNewLabel_4 = new JLabel("Senha");
+		panel_4.add(lblNewLabel_4, "cell 0 0");
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(197, 36, 136, 37);
-		panel_6.add(btnNewButton);
+		JLabel lblNewLabel_7_3 = new JLabel("*");
+		lblNewLabel_7_3.setForeground(Color.RED);
+		panel_4.add(lblNewLabel_7_3, "cell 1 0");
+		
+		txtSenha = new JTextField();
+		txtSenha.setBorder(new LineBorder(new Color(0, 0, 0)));
+		PainelInfo.add(txtSenha);
+		txtSenha.setColumns(10);
+		
+		JPanel PainelOpcao = new JPanel();
+		PainelOpcao.setBorder(new EmptyBorder(0, 60, 0, 50));
+		PainelCadastro.add(PainelOpcao, "cell 1 3,grow");
+		PainelOpcao.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JPanel panel_5 = new JPanel();
-		PainelCadastro.add(panel_5, "cell 1 5,grow");
-		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
+		panel_5.setOpaque(false);
+		PainelOpcao.add(panel_5);
+		panel_5.setLayout(new MigLayout("", "[][]", "[][]"));
 		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		panel_5.add(lblNewLabel_6);
+		JLabel lblNewLabel_5 = new JLabel("Selecione uma opção de usuario");
+		panel_5.add(lblNewLabel_5, "cell 0 0,alignx left,aligny bottom");
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_5.setVerticalAlignment(SwingConstants.BOTTOM);
+		
+		JLabel lblNewLabel_7_3_1 = new JLabel("*");
+		lblNewLabel_7_3_1.setForeground(Color.RED);
+		panel_5.add(lblNewLabel_7_3_1, "cell 1 0");
+		
+		JComboBox comboBox = new JComboBox();
+		panel_5.add(comboBox, "cell 0 1");
+		
+		JPanel PainelConfirm = new JPanel();
+		PainelConfirm.setBorder(new EmptyBorder(0, 60, 0, 50));
+		PainelCadastro.add(PainelConfirm, "cell 1 4,grow");
+		PainelConfirm.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel PainelBTN = new JPanel();
+		PainelConfirm.add(PainelBTN);
+		
+		painelTitulo.setOpaque(false);
+		PainelInfo.setOpaque(false);
+		PainelOpcao.setOpaque(false);
+		PainelConfirm.setOpaque(false);
+		PainelBTN.setOpaque(false);
+		
+		txtNome.setOpaque(false);
+		txtCPF.setOpaque(false);
+		txtEmail.setOpaque(false);
+		txtSenha.setOpaque(false);
+		
+		
+		
+		
+		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		
+		JLabel lblNewLabel_6 = new JLabel("Já tem uma conta? Acesse Aqui.");
+		lblNewLabel_6.setForeground(new Color(0, 0, 255));
+		lblNewLabel_6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			//codigo para ir para a tela de login
+				
+			}
+		});
+		GroupLayout gl_PainelBTN = new GroupLayout(PainelBTN);
+		gl_PainelBTN.setHorizontalGroup(
+			gl_PainelBTN.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_PainelBTN.createSequentialGroup()
+					.addContainerGap(143, Short.MAX_VALUE)
+					.addGroup(gl_PainelBTN.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(lblNewLabel_6, Alignment.TRAILING))
+					.addGap(130))
+		);
+		gl_PainelBTN.setVerticalGroup(
+			gl_PainelBTN.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_PainelBTN.createSequentialGroup()
+					.addGap(31)
+					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_6)
+					.addContainerGap())
+		);
+		PainelBTN.setLayout(gl_PainelBTN);
 		PainelKSF.setOpaque(false);
 		PainelKSF.setLayout(null);
 		
