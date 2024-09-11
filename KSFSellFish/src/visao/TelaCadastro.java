@@ -265,11 +265,11 @@ public class TelaCadastro extends JFrame {
 					System.out.println("User inserido!");
 
 				} else {
-					TelaError erro = new TelaError();
+					//TelaError erro = new TelaError();
 					
 					System.out.println("Campo vazio");
-					erro.setLocationRelativeTo(null);
-					erro.setVisible(true);
+					//erro.setLocationRelativeTo(null);
+					//erro.setVisible(true);
 				}
 
 			}
