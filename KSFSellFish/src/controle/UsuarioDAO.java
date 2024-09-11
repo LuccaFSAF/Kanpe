@@ -26,10 +26,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 	@Override
 	public boolean inserirUsuario(Usuario usuario) {
-		if (usuario != null) {
-			listaUsuarios.add(usuario);
-			return true;
-		}
+		
 		return false;
 	}
 

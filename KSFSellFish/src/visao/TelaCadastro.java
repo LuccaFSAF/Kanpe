@@ -58,6 +58,7 @@ public class TelaCadastro extends JFrame {
 			public void run() {
 				try {
 					TelaCadastro frame = new TelaCadastro();
+					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -215,6 +216,7 @@ public class TelaCadastro extends JFrame {
 		panel_5.add(lblNewLabel_7_3_1, "cell 1 0");
 
 		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"tst1", "tst2", "tste3"}));
 		comboBox.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		panel_5.add(comboBox, "cell 0 1");
 		comboBox.setBackground(new Color(154, 205, 217));
@@ -246,18 +248,28 @@ public class TelaCadastro extends JFrame {
 		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				Usuario user = new Usuario();
+				
 				String Nome = txtNome.getText();
 				String CPF = txtCPF.getText();
 				String Email = txtEmail.getText();
 				String Senha = txtSenha.getText();
 
 				if (!Nome.isEmpty() || !CPF.isEmpty() || !Email.isEmpty() || !Senha.isEmpty()) {
-
-//					uDAO.inserirUsuario();
+					
+					user.setNome(Nome);
+					user.setCpf(CPF);
+					user.setEmail(Email);
+					user.setSenha(Senha);
+					uDAO.inserirUsuario(user);
+					System.out.println("User inserido!");
 
 				} else {
+					TelaError erro = new TelaError();
+					
 					System.out.println("Campo vazio");
+					erro.setLocationRelativeTo(null);
+					erro.setVisible(true);
 				}
 
 			}
@@ -269,8 +281,10 @@ public class TelaCadastro extends JFrame {
 		lblNewLabel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				TelaLogin frame = new TelaLogin();
 
-				// codigo para ir para a tela de login
+				setVisible(false);				 
+				frame.setVisible(true);
 
 			}
 		});
