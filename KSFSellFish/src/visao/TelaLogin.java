@@ -17,6 +17,10 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaLogin extends JFrame {
 
@@ -129,6 +133,15 @@ public class TelaLogin extends JFrame {
 		panel_6.setOpaque(false);
 		
 		JLabel lblSenhaEsquecida = new JLabel("Esqueceu a senha?");
+		lblSenhaEsquecida.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				TelaEsqueceuSenha frame = new TelaEsqueceuSenha();
+
+				setVisible(false);				 
+				frame.setVisible(true);
+			}
+		});
 		panel_6.add(lblSenhaEsquecida);
 		lblSenhaEsquecida.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		lblSenhaEsquecida.setForeground(Color.BLUE);
@@ -139,6 +152,12 @@ public class TelaLogin extends JFrame {
 		panel_7.setOpaque(false);
 		
 		JButton bntEntrar = new JButton("Entrar");
+		bntEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//tela dps de logar
+			}
+		});
 		panel_7.add(bntEntrar);
 		bntEntrar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		bntEntrar.setBackground(new Color(0, 139, 139));
@@ -148,6 +167,15 @@ public class TelaLogin extends JFrame {
 		panel_8.setOpaque(false);
 		
 		JLabel lblCadastrese = new JLabel("Não possui uma conta?  Cadastre-se.");
+		lblCadastrese.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				TelaCadastro frame = new TelaCadastro();
+
+				setVisible(false);				 
+				frame.setVisible(true);
+			}
+		});
 		panel_8.add(lblCadastrese);
 		lblCadastrese.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		lblCadastrese.setForeground(Color.BLUE);
