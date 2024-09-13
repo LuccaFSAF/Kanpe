@@ -27,6 +27,8 @@ public class UsuarioDAO implements IUsuarioDAO {
 	@Override
 	public boolean inserirUsuario(Usuario usuario) {
 		
+		listaUsuarios.add(usuario);
+		
 		return false;
 	}
 
@@ -37,8 +39,13 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 
 	@Override
-	public boolean removerUsuario(int idUsuario) {
-		// TODO Auto-generated method stub
+	public boolean removerUsuario(String cpf) {
+		for (Usuario usuario : listaUsuarios) {
+			if(usuario.getCpf()==cpf) {
+				listaUsuarios.remove(usuario);
+			}
+		}
+		
 		return false;
 	}
 
