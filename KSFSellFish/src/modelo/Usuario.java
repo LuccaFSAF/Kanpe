@@ -4,15 +4,15 @@ public class Usuario {
 	private String nome;
 	private String senha;
 	private String email;
-	private String cpf;
 
-	public String getCpf() {
-		return cpf;
+	public Usuario() {}
+	
+	public Usuario(String nome, String senha, String email) {
+	this.nome = nome;
+	this.senha = senha;
+	this.email = email;
 	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+	
 
 	public String getNome() {
 		return nome;
