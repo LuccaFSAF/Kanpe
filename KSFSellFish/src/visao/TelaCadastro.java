@@ -40,6 +40,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Cursor;
+import com.jgoodies.forms.layout.FormSpecs;
 
 public class TelaCadastro extends JFrame {
 
@@ -58,7 +60,7 @@ public class TelaCadastro extends JFrame {
 			public void run() {
 				try {
 					TelaCadastro frame = new TelaCadastro();
-					frame.setLocationRelativeTo(null); 
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -71,9 +73,7 @@ public class TelaCadastro extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastro() {
-		
-		
-		
+
 		setResizable(false);
 		setLocationByPlatform(true);
 		setMinimumSize(new Dimension(1176, 664));
@@ -104,31 +104,31 @@ public class TelaCadastro extends JFrame {
 		PainelCadastro.add(painelTitulo, "cell 1 1,grow");
 		painelTitulo.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Crie uma conta");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 50));
-		lblNewLabel.setBounds(10, 11, 513, 114);
-		lblNewLabel.setForeground(new Color(0, 0, 0));
-		painelTitulo.add(lblNewLabel);
+		JLabel lblTitulo = new JLabel("Crie uma conta");
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 50));
+		lblTitulo.setBounds(10, 11, 513, 114);
+		lblTitulo.setForeground(new Color(0, 0, 0));
+		painelTitulo.add(lblTitulo);
 
 		JPanel PainelInfo = new JPanel();
 		PainelInfo.setBorder(new EmptyBorder(0, 60, 0, 50));
 		PainelCadastro.add(PainelInfo, "cell 1 2,grow");
 		PainelInfo.setLayout(new GridLayout(0, 1, 0, 0));
 
-		JPanel panel_1 = new JPanel();
-		panel_1.setOpaque(false);
-		PainelInfo.add(panel_1);
-		panel_1.setLayout(new MigLayout("", "[][][]", "[]"));
+		JPanel panelNome = new JPanel();
+		panelNome.setOpaque(false);
+		PainelInfo.add(panelNome);
+		panelNome.setLayout(new MigLayout("", "[][][]", "[]"));
 
-		JLabel lblNewLabel_1 = new JLabel("Nome");
-		lblNewLabel_1.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		panel_1.add(lblNewLabel_1, "cell 0 0");
-		lblNewLabel_1.setForeground(new Color(0, 0, 0));
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		panelNome.add(lblNome, "cell 0 0");
+		lblNome.setForeground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_7 = new JLabel("*");
 		lblNewLabel_7.setForeground(new Color(255, 0, 0));
-		panel_1.add(lblNewLabel_7, "cell 1 0");
+		panelNome.add(lblNewLabel_7, "cell 1 0");
 
 		txtNome = new JTextField();
 		txtNome.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
@@ -137,57 +137,57 @@ public class TelaCadastro extends JFrame {
 		PainelInfo.add(txtNome);
 		txtNome.setColumns(10);
 
-		JPanel panel_2 = new JPanel();
-		panel_2.setOpaque(false);
-		PainelInfo.add(panel_2);
-		panel_2.setLayout(new MigLayout("", "[][]", "[]"));
+		JPanel panelCpf = new JPanel();
+		panelCpf.setOpaque(false);
+		PainelInfo.add(panelCpf);
+		panelCpf.setLayout(new MigLayout("", "[][]", "[]"));
 
-		JLabel lblNewLabel_2 = new JLabel("CPF");
-		lblNewLabel_2.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		panel_2.add(lblNewLabel_2, "cell 0 0");
-		lblNewLabel_2.setForeground(new Color(0, 0, 0));
+		JLabel lblCpf = new JLabel("CPF");
+		lblCpf.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		panelCpf.add(lblCpf, "cell 0 0");
+		lblCpf.setForeground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_7_1 = new JLabel("*");
 		lblNewLabel_7_1.setForeground(Color.RED);
-		panel_2.add(lblNewLabel_7_1, "cell 1 0");
+		panelCpf.add(lblNewLabel_7_1, "cell 1 0");
 
 		txtCPF = new JTextField();
 		txtCPF.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		PainelInfo.add(txtCPF);
 		txtCPF.setColumns(10);
 
-		JPanel panel_3 = new JPanel();
-		panel_3.setOpaque(false);
-		PainelInfo.add(panel_3);
-		panel_3.setLayout(new MigLayout("", "[][]", "[]"));
+		JPanel panelEmail = new JPanel();
+		panelEmail.setOpaque(false);
+		PainelInfo.add(panelEmail);
+		panelEmail.setLayout(new MigLayout("", "[][]", "[]"));
 
-		JLabel lblNewLabel_3 = new JLabel("Email");
-		lblNewLabel_3.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		panel_3.add(lblNewLabel_3, "cell 0 0");
-		lblNewLabel_3.setForeground(new Color(0, 0, 0));
+		JLabel lblEmail = new JLabel("Email");
+		lblEmail.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		panelEmail.add(lblEmail, "cell 0 0");
+		lblEmail.setForeground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_7_2 = new JLabel("*");
 		lblNewLabel_7_2.setForeground(Color.RED);
-		panel_3.add(lblNewLabel_7_2, "cell 1 0");
+		panelEmail.add(lblNewLabel_7_2, "cell 1 0");
 
 		txtEmail = new JTextField();
 		txtEmail.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		PainelInfo.add(txtEmail);
 		txtEmail.setColumns(10);
 
-		JPanel panel_4 = new JPanel();
-		panel_4.setOpaque(false);
-		PainelInfo.add(panel_4);
-		panel_4.setLayout(new MigLayout("", "[][]", "[]"));
+		JPanel panelSenha = new JPanel();
+		panelSenha.setOpaque(false);
+		PainelInfo.add(panelSenha);
+		panelSenha.setLayout(new MigLayout("", "[][]", "[]"));
 
-		JLabel lblNewLabel_4 = new JLabel("Senha");
-		lblNewLabel_4.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		panel_4.add(lblNewLabel_4, "cell 0 0");
-		lblNewLabel_4.setForeground(new Color(0, 0, 0));
+		JLabel lblSenha = new JLabel("Senha");
+		lblSenha.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		panelSenha.add(lblSenha, "cell 0 0");
+		lblSenha.setForeground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_7_3 = new JLabel("*");
 		lblNewLabel_7_3.setForeground(Color.RED);
-		panel_4.add(lblNewLabel_7_3, "cell 1 0");
+		panelSenha.add(lblNewLabel_7_3, "cell 1 0");
 
 		txtSenha = new JTextField();
 		txtSenha.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
@@ -199,27 +199,29 @@ public class TelaCadastro extends JFrame {
 		PainelCadastro.add(PainelOpcao, "cell 1 3,grow");
 		PainelOpcao.setLayout(new GridLayout(0, 1, 0, 0));
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setOpaque(false);
-		PainelOpcao.add(panel_5);
-		panel_5.setLayout(new MigLayout("", "[][]", "[][]"));
+		JPanel panelOpcUser = new JPanel();
+		panelOpcUser.setOpaque(false);
+		PainelOpcao.add(panelOpcUser);
+		panelOpcUser.setLayout(new MigLayout("", "[][]", "[][]"));
 
-		JLabel lblNewLabel_5 = new JLabel("Selecione uma opção de usuario");
-		lblNewLabel_5.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		lblNewLabel_5.setForeground(new Color(0, 0, 0));
-		panel_5.add(lblNewLabel_5, "cell 0 0,alignx left,aligny bottom");
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_5.setVerticalAlignment(SwingConstants.BOTTOM);
+		JLabel lblOpcUser = new JLabel("Selecione uma opção de usuario");
+		lblOpcUser.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		lblOpcUser.setForeground(new Color(0, 0, 0));
+		panelOpcUser.add(lblOpcUser, "cell 0 0,alignx left,aligny bottom");
+		lblOpcUser.setHorizontalAlignment(SwingConstants.LEFT);
+		lblOpcUser.setVerticalAlignment(SwingConstants.BOTTOM);
 
 		JLabel lblNewLabel_7_3_1 = new JLabel("*");
 		lblNewLabel_7_3_1.setForeground(Color.RED);
-		panel_5.add(lblNewLabel_7_3_1, "cell 1 0");
+		panelOpcUser.add(lblNewLabel_7_3_1, "cell 1 0");
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"tst1", "tst2", "tste3"}));
-		comboBox.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		panel_5.add(comboBox, "cell 0 1");
-		comboBox.setBackground(new Color(154, 205, 217));
+		JComboBox cboxOpcUser = new JComboBox();
+		cboxOpcUser.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cboxOpcUser.setModel(new DefaultComboBoxModel(new String[] {"Vendedor", "Cliente"}));
+		cboxOpcUser.setSelectedIndex(1);
+		cboxOpcUser.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
+		panelOpcUser.add(cboxOpcUser, "cell 0 1");
+		cboxOpcUser.setBackground(new Color(154, 205, 217));
 
 		JPanel PainelConfirm = new JPanel();
 		PainelConfirm.setBorder(new EmptyBorder(0, 60, 0, 50));
@@ -240,68 +242,73 @@ public class TelaCadastro extends JFrame {
 		txtEmail.setOpaque(false);
 		txtSenha.setOpaque(false);
 
-		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		btnNewButton.setBackground(new Color(8, 127, 140));
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCadastrar = new RoundButton("Cadastrar");
+		btnCadastrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnCadastrar.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.BOLD, 13));
+		btnCadastrar.setBackground(new Color(8, 127, 140));
+		btnCadastrar.setForeground(new Color(0, 0, 0));
+		btnCadastrar.setBorderPainted(false);
+		btnCadastrar.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
+		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Usuario user = new Usuario();
-				
+
 				String Nome = txtNome.getText();
 				String CPF = txtCPF.getText();
 				String Email = txtEmail.getText();
 				String Senha = txtSenha.getText();
 
 				if (!Nome.isEmpty() || !CPF.isEmpty() || !Email.isEmpty() || !Senha.isEmpty()) {
-					
+
 					user.setNome(Nome);
 					user.setCpf(CPF);
 					user.setEmail(Email);
 					user.setSenha(Senha);
 					uDAO.inserirUsuario(user);
 					System.out.println("User inserido!");
+					TelaPerfil perfil = new TelaPerfil();
+					perfil.setLocationRelativeTo(null);
+					perfil.setVisible(true);
+					dispose();
 
 				} else {
-					//TelaError erro = new TelaError();
-					
+					TelaError erro = new TelaError();
+
 					System.out.println("Campo vazio");
-					//erro.setLocationRelativeTo(null);
-					//erro.setVisible(true);
+					erro.setLocationRelativeTo(null);
+					erro.setVisible(true);
 				}
 
 			}
 		});
 
-		JLabel lblNewLabel_6 = new JLabel("Já tem uma conta? Acesse Aqui.");
-		lblNewLabel_6.setFont(new Font("/Fontes/Roboto-Black.ttf", Font.PLAIN, 13));
-		lblNewLabel_6.setForeground(new Color(0, 92, 214));
-		lblNewLabel_6.addMouseListener(new MouseAdapter() {
+		JLabel lblJaTemConta = new JLabel("Já tem uma conta? Acesse Aqui.");
+		lblJaTemConta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblJaTemConta.setFont(new Font("Dialog", Font.PLAIN, 16));
+		lblJaTemConta.setForeground(new Color(0, 92, 214));
+		lblJaTemConta.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				TelaLogin frame = new TelaLogin();
 
-				setVisible(false);				 
+				setVisible(false);
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 
 			}
+			
 		});
-		GroupLayout gl_PainelBTN = new GroupLayout(PainelBTN);
-		gl_PainelBTN.setHorizontalGroup(gl_PainelBTN.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
-				gl_PainelBTN.createSequentialGroup().addContainerGap(143, Short.MAX_VALUE)
-						.addGroup(gl_PainelBTN.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblNewLabel_6, Alignment.TRAILING))
-						.addGap(130)));
-		gl_PainelBTN.setVerticalGroup(gl_PainelBTN.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_PainelBTN.createSequentialGroup().addGap(31)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_6).addContainerGap()));
-		PainelBTN.setLayout(gl_PainelBTN);
+		SpringLayout sl_PainelBTN = new SpringLayout();
+		sl_PainelBTN.putConstraint(SpringLayout.NORTH, lblJaTemConta, 3, SpringLayout.SOUTH, btnCadastrar);
+		sl_PainelBTN.putConstraint(SpringLayout.WEST, lblJaTemConta, 0, SpringLayout.WEST, btnCadastrar);
+		sl_PainelBTN.putConstraint(SpringLayout.NORTH, btnCadastrar, 0, SpringLayout.NORTH, PainelBTN);
+		sl_PainelBTN.putConstraint(SpringLayout.WEST, btnCadastrar, 97, SpringLayout.WEST, PainelBTN);
+		sl_PainelBTN.putConstraint(SpringLayout.SOUTH, btnCadastrar, 57, SpringLayout.NORTH, PainelBTN);
+		sl_PainelBTN.putConstraint(SpringLayout.EAST, btnCadastrar, 326, SpringLayout.WEST, PainelBTN);
+		PainelBTN.setLayout(sl_PainelBTN);
+		PainelBTN.add(btnCadastrar);
+		PainelBTN.add(lblJaTemConta);
 		PainelKSF.setOpaque(false);
 		PainelKSF.setLayout(null);
 

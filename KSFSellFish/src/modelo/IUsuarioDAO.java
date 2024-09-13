@@ -7,6 +7,6 @@ public interface IUsuarioDAO {
 
 	public boolean alterarUsuario(Usuario usuario);
 
-	public boolean removerUsuario(int idUsuario);
+	public boolean removerUsuario(String cpf);
 
 }
