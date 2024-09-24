@@ -17,6 +17,7 @@ USE Kanepe;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Usuarios (
     idUsuarios INT NOT NULL AUTO_INCREMENT,
+    cpf_Usuario INT NOT NULL UNIQUE,
     nome_Usuario VARCHAR(100) NOT NULL,
     senha_Usuario VARCHAR(100) NOT NULL,
     email_Usuario VARCHAR(100) NOT NULL,
